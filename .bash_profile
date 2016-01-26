@@ -7,13 +7,16 @@ export CHEF_ORGNAME
 export CHEF_DOMAIN
 # kubernetes stuff
 export KUBERNETES_PROVIDER=vagrant
-export PATH="/Users/plaks/GitHub/github.com/philax/bash_profile/kubernetes/cluster/:$PATH"
 # Misc stuff
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 #export VAGRANT_SERVER_URL=https://vagrantcloud.dgs.io
 #export PATH="/opt/chefdk/embedded/bin:$PATH"
 #export PATH="/opt/chefdk/bin:$PATH"
+
+# golang stuff
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/GitHub/Dev/golang/workspace
 
 # Aliases
 alias ll='ls -alh'
