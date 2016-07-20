@@ -3,6 +3,8 @@
 # Misc stuff
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
+export HISTSIZE=10000
+export HISTFILESIZE=10000
 
 # Aliases
 alias ll='ls -alh'
@@ -38,5 +40,7 @@ GIT_PS1_SHOWCOLORHINTS=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWUPSTREAM="auto"
+source .git-prompt.sh
+
 
 PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
