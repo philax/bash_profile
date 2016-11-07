@@ -1,5 +1,4 @@
-#PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-#export PATH
+#export PATH=/Library/Frameworks/Python.framework/Versions/2.7/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 # Misc stuff
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
@@ -44,3 +43,5 @@ source .git-prompt.sh
 
 
 PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
+
+echo "WARNING: If this is the first run, uncomment the top line to export PATH correctly, then continue..."
