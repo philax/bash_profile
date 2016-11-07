@@ -33,6 +33,13 @@ if [ -f `brew --prefix`/etc/bash_completion.d/git-prompt.sh ]; then
   . `brew --prefix`/etc/bash_completion.d/git-prompt.sh
 fi
 
+# Sublime Linking for cmd line usage
+if [ -f '/Applications/Sublime text.app' ]; then
+	if [ ! -h '/usr/local/bin/subl' ]; then
+		ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+	fi
+fi
+
 # Show git branch in console
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWCOLORHINTS=true
@@ -44,4 +51,4 @@ source .git-prompt.sh
 
 PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 
-echo "WARNING: If this is the first run, uncomment the top line to export PATH correctly, then continue..."
+echo "INFO: If this is the first run, uncomment the top line to export PATH correctly, then continue.  Otherwise, have a nice day!"
