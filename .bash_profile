@@ -40,6 +40,9 @@ if [ -f '/Applications/Sublime text.app' ]; then
 	fi
 fi
 
+# AWS CLI Bash AutoCompletion
+complete -C '/usr/local/bin/aws_completer' aws
+
 # Show git branch in console
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWCOLORHINTS=true
@@ -51,4 +54,5 @@ source .git-prompt.sh
 
 PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 
-echo "INFO: If this is the first run, uncomment the top line to export PATH correctly, then continue.  Otherwise, have a nice day!"
+echo "INFO: If this is the first run, uncomment the top line to export PATH correctly, then continue.
+Otherwise, have a nice day!"
