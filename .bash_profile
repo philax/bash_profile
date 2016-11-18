@@ -4,6 +4,8 @@ export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 export HISTSIZE=10000
 export HISTFILESIZE=10000
+# VirtualEnvWrapper
+export WORKON_HOME=~/Envs
 
 # Aliases
 alias ll='ls -alh'
