@@ -26,6 +26,20 @@ alias gpu='git pull'
 alias gcl='git clone'
 alias cd..='cd ..'
 
+# Start SSH Agent. 'ssh-add' keys if you wish to to preserve passwords during this session
+if [ -f ~/.agent.env ] ; then
+    . ~/.agent.env > /dev/null
+    if ! kill -0 $SSH_AGENT_PID > /dev/null 2>&1; then
+        echo "Stale agent file found. Spawning new agent… "
+        eval `ssh-agent | tee ~/.agent.env`
+        ssh-add
+    fi 
+else
+    echo "Starting ssh-agent"
+    eval `ssh-agent | tee ~/.agent.env`
+    ssh-add
+fi
+
 # Brew bash completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
@@ -56,5 +70,11 @@ source .git-prompt.sh
 
 PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 
+# virtualenvwrapper sourcing
+source /usr/local/bin/virtualenvwrapper.sh
+
 echo "INFO: If this is the first run, uncomment the top line to export PATH correctly, then continue.
 Otherwise, have a nice day!"
+
+# programs to install via brew:
+# brew install httpie autoenv python3 cowsay openssl wget wireshark terraform
