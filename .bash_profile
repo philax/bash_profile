@@ -25,6 +25,7 @@ alias grr='git remote rm'
 alias gpu='git pull'
 alias gcl='git clone'
 alias cd..='cd ..'
+alias sourceme='source ~/dev/github/philax/bash_profile/.bash_profile'
 
 # Start SSH Agent. 'ssh-add' keys if you wish to to preserve passwords during this session
 if [ -f ~/.agent.env ] ; then
@@ -65,7 +66,7 @@ GIT_PS1_SHOWCOLORHINTS=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWUPSTREAM="auto"
-source .git-prompt.sh
+source ~/dev/github/philax/bash_profile/.git-prompt.sh
 
 
 PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
