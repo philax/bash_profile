@@ -78,4 +78,4 @@ echo "INFO: If this is the first run, uncomment the top line to export PATH corr
 Otherwise, have a nice day!"
 
 # programs to install via brew:
-# brew install httpie autoenv python3 cowsay openssl wget wireshark terraform
+# brew install httpie autoenv python3 cowsay openssl wget wireshark terraform consul jq
