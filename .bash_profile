@@ -25,6 +25,7 @@ alias grr='git remote rm'
 alias gpu='git pull'
 alias gcl='git clone'
 alias cd..='cd ..'
+alias cd-='cd -'
 alias sourceme='source ~/dev/github/philax/bash_profile/.bash_profile'
 
 # Start SSH Agent. 'ssh-add' keys if you wish to to preserve passwords during this session
