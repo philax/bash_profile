@@ -26,7 +26,11 @@ alias gpu='git pull'
 alias gcl='git clone'
 alias cd..='cd ..'
 alias cd-='cd -'
-alias sourceme='source ~/dev/github.com/philax/bash_profile/.bash_profile'
+# for sourceme alias
+if ! [ -L ~/.bash_profile ]; then
+    ln -s ~/dev/github.com/philax/bash_profile/.bash_profile ~/.bash_profile
+fi
+alias sourceme='source ~/.bash_profile'
 
 # Start SSH Agent. 'ssh-add' keys if you wish to to preserve passwords during this session
 if [ -f ~/.agent.env ] ; then
@@ -73,10 +77,31 @@ source ~/dev/github.com/philax/bash_profile/.git-prompt.sh
 PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 
 # virtualenvwrapper sourcing
-source /usr/local/bin/virtualenvwrapper.sh
+if [ -f '/usr/local/bin/virtualenvwrapper.sh' ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+else
+    echo "Missing virtualenvwrapper.  google me for install steps if you expect this to be there, sorry bro."
+fi
+
+# programs to install via brew:
+# brew install httpie autoenv python3 cowsay openssl wget wireshark terraform consul jq -y
+# extended / java programs to install via brew:
+# brew tap caskroom/versions
+# brew cask install mysqlworkbench java8 jce-unlimited-strength-policy8 charles -y
+# brew install mysql@5.6 tomcat@8.0 ant@1.9 -y
+# brew services list
+
+# Java Stuff
+if [ -d '/usr/local/Cellar/tomcat@8.0/8.0.43' ]; then
+    export CATALINA_HOME=/usr/local/Cellar/tomcat@8.0/8.0.43
+else
+    echo "Missing Tomcat8. Run: brew install tomcat@8.0"
+fi
+if [ -d '/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home' ]; then
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home
+else
+    echo "Missing Tomcat8. Run: brew cask install java8"
+fi
 
 echo "INFO: If this is the first run, uncomment the top line to export PATH correctly, then continue.
 Otherwise, have a nice day!"
-
-# programs to install via brew:
-# brew install httpie autoenv python3 cowsay openssl wget wireshark terraform consul jq
