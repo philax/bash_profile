@@ -1,4 +1,14 @@
 #export PATH=/Library/Frameworks/Python.framework/Versions/2.7/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
+sourced_pathmunge () {
+        if ! echo $PATH | /bin/egrep -q "(^|:)$1($|:)" ; then
+           if [ "$2" = "after" ] ; then
+              PATH=$PATH:$1
+           else
+              PATH=$1:$PATH
+           fi
+        fi
+}
+
 # Misc stuff
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
@@ -105,3 +115,7 @@ fi
 
 echo "INFO: If this is the first run, uncomment the top line to export PATH correctly, then continue.
 Otherwise, have a nice day!"
+
+# MAVEN WHATNOT
+export M2_OPTS=-Xmx1536m
+export M2_HOME=/usr/local/Cellar/maven/3.5.0
