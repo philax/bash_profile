@@ -8,6 +8,8 @@ sourced_pathmunge () {
            fi
         fi
 }
+# Maybe just place the above function as a script into usr/sbin...  meh..
+# sourced_pathmunge '/Library/Frameworks/Python.framework/Versions/2.7/bin/' after
 
 # Misc stuff
 export CLICOLOR=1
@@ -16,6 +18,13 @@ export HISTSIZE=10000
 export HISTFILESIZE=10000
 # VirtualEnvWrapper
 export WORKON_HOME=~/Envs
+# If credstash exists, export some stuff. Otherwise say it needs to be installed.
+if [ -x "$(command -v credstash)" ]; then
+    export DATADOG_API_KEY=$(credstash get datadog_api_key)
+    export DATADOG_APP_KEY=$(credstash get datadog_terraform_app_key)
+else
+    echo -e "[WARN] cannot find credstash, skipping some environment setup steps..."
+fi
 
 # Aliases
 alias ll='ls -alh'
@@ -113,9 +122,8 @@ else
     echo "Missing Tomcat8. Run: brew cask install java8"
 fi
 
-echo "INFO: If this is the first run, uncomment the top line to export PATH correctly, then continue.
-Otherwise, have a nice day!"
-
 # MAVEN WHATNOT
 export M2_OPTS=-Xmx1536m
 export M2_HOME=/usr/local/Cellar/maven/3.5.0
+
+echo "Sourced. Have a nice day!"
