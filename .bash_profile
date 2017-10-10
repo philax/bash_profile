@@ -22,6 +22,7 @@ export WORKON_HOME=~/Envs
 if [ -x "$(command -v credstash)" ]; then
     export DATADOG_API_KEY=$(credstash get datadog_api_key)
     export DATADOG_APP_KEY=$(credstash get datadog_terraform_app_key)
+    export TF_VAR_pagerduty_token=$(credstash get pagerduty_terraform_api_key)
 else
     echo -e "[WARN] cannot find credstash, skipping some environment setup steps..."
 fi
