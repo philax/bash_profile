@@ -1,3 +1,5 @@
+echo "Loading your '.bash_profile'..."
+
 #export PATH=/Library/Frameworks/Python.framework/Versions/2.7/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 sourced_pathmunge () {
         if ! echo $PATH | /bin/egrep -q "(^|:)$1($|:)" ; then
@@ -128,3 +130,4 @@ export M2_OPTS=-Xmx1536m
 export M2_HOME=/usr/local/Cellar/maven/3.5.0
 
 echo "Sourced. Have a nice day!"
+
