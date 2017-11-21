@@ -106,9 +106,11 @@ else
 fi
 
 # programs to install via brew:
-# tfenv reqs you to do the below line first
+# tfenv reqs you to do the below line first, then unlinking terraform so tfenv can control tf versions
 # sudo xcodebuild -license accept
-# brew install httpie autoenv python3 cowsay openssl wget wireshark terraform consul tfenv jq -y
+# brew install httpie autoenv python3 cowsay openssl wget wireshark consul terraform jq -y
+# brew unlink terraform
+# brew install tfenv -y
 # extended / java programs to install via brew:
 # brew tap caskroom/versions
 # brew cask install mysqlworkbench java8 jce-unlimited-strength-policy8 charles -y
