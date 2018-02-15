@@ -108,7 +108,7 @@ fi
 # programs to install via brew:
 # tfenv reqs you to do the below line first, then unlinking terraform so tfenv can control tf versions
 # sudo xcodebuild -license accept
-# brew install httpie autoenv python3 cowsay openssl wget wireshark consul jq -y
+# brew install httpie autoenv python3 cowsay openssl wget wireshark consul jq gpg -y
 # brew install tfenv -y
 # tfenv install 0.9.11
 # extended / java programs to install via brew:
