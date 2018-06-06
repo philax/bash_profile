@@ -2,7 +2,7 @@ echo "Loading your '.bash_profile'..."
 
 #export PATH=/Library/Frameworks/Python.framework/Versions/2.7/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 sourced_pathmunge () {
-        if ! echo $PATH | /bin/egrep -q "(^|:)$1($|:)" ; then
+        if ! echo $PATH | /usr/bin/egrep -q "(^|:)$1($|:)" ; then
            if [ "$2" = "after" ] ; then
               PATH=$PATH:$1
            else
@@ -113,8 +113,10 @@ fi
 # tfenv install 0.9.11
 # extended / java programs to install via brew:
 # brew tap caskroom/versions
-# brew cask install mysqlworkbench java8 jce-unlimited-strength-policy8 charles -y
+# brew cask install mysqlworkbench java8 charles -y # jce-unlimited-strength-policy8 charles -y
 # brew install mysql@5.6 tomcat@8.0 ant@1.9 -y
+# # Install java8 even though higher versions of java exist
+# 
 # brew services list
 
 # Java Stuff
