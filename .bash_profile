@@ -113,7 +113,7 @@ fi
 # tfenv install 0.9.11
 # extended / java programs to install via brew:
 # brew tap caskroom/versions
-# brew cask install mysqlworkbench java8 charles brave -y # jce-unlimited-strength-policy8 charles -y
+# brew cask install pgadmin4 mysqlworkbench java8 charles brave -y # jce-unlimited-strength-policy8 charles -y
 # brew install mysql@5.6 tomcat@8.0 ant@1.9 -y
 # # Install java8 even though higher versions of java exist
 # 
