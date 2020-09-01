@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "Loading your '.bash_profile'..."
 
 #export PATH=/Library/Frameworks/Python.framework/Versions/2.7/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
@@ -48,6 +49,8 @@ alias gpu='git pull'
 alias gcl='git clone'
 alias cd..='cd ..'
 alias cd-='cd -'
+#ldapsearchusergroups () { ldapsearch -h ldap.aws.cainc.com -p 389 -x -b "dc=aws,dc=cainc,dc=com" "(\&(cn=\*)(memberUid=\$1))" dn | awk -F[=,] "/dn:/ {print \$2}"; }
+
 # for sourceme alias
 if ! [ -L ~/.bash_profile ]; then
     ln -s ~/dev/github.com/philax/bash_profile/.bash_profile ~/.bash_profile
@@ -108,7 +111,7 @@ fi
 # programs to install via brew:
 # tfenv reqs you to do the below line first, then unlinking terraform so tfenv can control tf versions
 # sudo xcodebuild -license accept
-# brew install httpie autoenv python3 cowsay openssl wget wireshark consul jq gpg jsonlint -y
+# brew install httpie autoenv python3 cowsay openssl wget wireshark consul jq gpg jsonlint shellcheck watch jp -y
 # brew install tfenv -y
 # tfenv install 0.9.11
 # extended / java programs to install via brew:
@@ -150,3 +153,12 @@ export PATH
 eval "$(pyenv init -)"
 
 echo "Sourced. Have a nice day!"
+
+##
+# Your previous /Users/plaks/.bash_profile file was backed up as /Users/plaks/.bash_profile.macports-saved_2020-04-24_at_14:07:59
+##
+
+# MacPorts Installer addition on 2020-04-24_at_14:07:59: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+
