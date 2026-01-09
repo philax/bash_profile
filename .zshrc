@@ -22,13 +22,13 @@ export HISTFILESIZE=10000
 # VirtualEnvWrapper
 export WORKON_HOME=~/Envs
 # If credstash exists, export some stuff. Otherwise say it needs to be installed.
-if [ -x "$(command -v credstash)" ]; then
-    export DATADOG_API_KEY=$(credstash get datadog_api_key)
-    export DATADOG_APP_KEY=$(credstash get datadog_terraform_app_key)
-    export TF_VAR_pagerduty_token=$(credstash get pagerduty_terraform_api_key)
-else
-    echo -e "[WARN] cannot find credstash, skipping some environment setup steps..."
-fi
+# if [ -x "$(command -v credstash)" ]; then
+#     export DATADOG_API_KEY=$(credstash get datadog_api_key)
+#     export DATADOG_APP_KEY=$(credstash get datadog_terraform_app_key)
+#     export TF_VAR_pagerduty_token=$(credstash get pagerduty_terraform_api_key)
+# else
+#     echo -e "[WARN] cannot find credstash, skipping some environment setup steps..."
+# fi
 
 # Aliases
 alias ll='ls -alh'
@@ -127,11 +127,11 @@ GIT_PS1_SHOWUPSTREAM="auto"
 
 
 # virtualenvwrapper sourcing
-if [ -f '/usr/local/bin/virtualenvwrapper.sh' ]; then
-    source /usr/local/bin/virtualenvwrapper.sh
-else
-    echo "[WARN] Missing virtualenvwrapper. Google me for install steps if you expect this to be there, sorry bro."
-fi
+# if [ -f '/usr/local/bin/virtualenvwrapper.sh' ]; then
+#     source /usr/local/bin/virtualenvwrapper.sh
+# else
+#     echo "[WARN] Missing virtualenvwrapper. Google me for install steps if you expect this to be there, sorry bro."
+# fi
 
 # programs to install via brew:
 # tfenv reqs you to do the below line first, then unlinking terraform so tfenv can control tf versions
@@ -144,7 +144,7 @@ fi
 # brew cask install pgadmin4 mysqlworkbench java8 charles brave postman -y # jce-unlimited-strength-policy8 -y
 # brew install mysql@5.6 tomcat@8.0 ant@1.9 -y
 # # Install java8 even though higher versions of java exist
-brew update
+# brew update
 # brew install font-fira-code
 # make sure to install fira-code on vstudio as well
 # brew install jq wget openssl wireshark
