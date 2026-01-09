@@ -186,8 +186,8 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # export PATH
 
 # Setting up pyenv for easy env swapping
-echo "Setting up pyenv for easy env swapping..."
-eval "$(pyenv init -)"
+# echo "Setting up pyenv for easy env swapping..."
+# eval "$(pyenv init -)"
 
 # ensure starship, the zsh git prompt stuff, is initialized
 eval "$(starship init zsh)"
