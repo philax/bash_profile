@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Loading your '.bash_profile'..."
+echo "Loading your '.zshrc'..."
 
 #export PATH=/Library/Frameworks/Python.framework/Versions/2.7/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 sourced_pathmunge () {
@@ -52,10 +52,10 @@ alias cd-='cd -'
 #ldapsearchusergroups () { ldapsearch -h ldap.aws.cainc.com -p 389 -x -b "dc=aws,dc=cainc,dc=com" "(\&(cn=\*)(memberUid=\$1))" dn | awk -F[=,] "/dn:/ {print \$2}"; }
 
 # for sourceme alias
-if ! [ -L ~/.bash_profile ]; then
-    ln -s ~/dev/github.com/philax/bash_profile/.bash_profile ~/.bash_profile
+if ! [ -L ~/.zshrc ]; then
+    ln -s ~/dev/github.com/philax/bash_profile/.zshrc ~/.zshrc
 fi
-alias sourceme='source ~/.bash_profile'
+alias sourceme='source ~/.zshrc'
 
 # Start SSH Agent. 'ssh-add' keys if you wish to to preserve passwords during this session
 if [ -f ~/.agent.env ] ; then
