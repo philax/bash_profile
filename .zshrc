@@ -146,6 +146,8 @@ GIT_PS1_SHOWUPSTREAM="auto"
 # # Install java8 even though higher versions of java exist
 # brew update
 # brew install font-fira-code
+# install the aws and zsh auto completions
+# brew install zsh-completions
 # make sure to install fira-code on vstudio as well
 # brew install jq wget openssl wireshark
 # install zsh git prompt stuff, cus I'm sick of fiddling with it
