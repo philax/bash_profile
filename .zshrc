@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Loading your '.zshrc'..."
 
-#export PATH=/Library/Frameworks/Python.framework/Versions/2.7/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
+#export PATH=/Library/Frameworks/Python.framework/Versions/2.7/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.local/bin:$PATH
 sourced_pathmunge () {
         if ! echo $PATH | /usr/bin/egrep -q "(^|:)$1($|:)" ; then
            if [ "$2" = "after" ] ; then
