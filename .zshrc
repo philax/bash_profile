@@ -149,7 +149,7 @@ GIT_PS1_SHOWUPSTREAM="auto"
 # install the aws and zsh auto completions
 # brew install zsh-completions
 # make sure to install fira-code on vstudio as well
-# brew install jq wget openssl wireshark
+# brew install npm
 # install zsh git prompt stuff, cus I'm sick of fiddling with it
 # brew install starship
 
