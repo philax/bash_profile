@@ -17,8 +17,17 @@ sourced_pathmunge () {
 # Misc stuff
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
+
+# Shared history across every iTerm2 tab and window
+export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
-export HISTFILESIZE=10000
+export SAVEHIST=10000
+setopt SHARE_HISTORY          # write on every command, re-read what other sessions wrote
+setopt EXTENDED_HISTORY       # record timestamps, required for correct interleaved ordering
+setopt HIST_IGNORE_DUPS       # skip a command that repeats the one before it
+setopt HIST_IGNORE_SPACE      # a leading space keeps a command out of history
+setopt HIST_REDUCE_BLANKS
+
 # VirtualEnvWrapper
 export WORKON_HOME=~/Envs
 # If credstash exists, export some stuff. Otherwise say it needs to be installed.
